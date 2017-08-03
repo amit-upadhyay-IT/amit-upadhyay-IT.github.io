@@ -1,0 +1,165 @@
+/* Extra small devices (phones, less than 768px) */
+@media (max-width : 767px) {
+
+	.header-top-wrapper{
+		line-height: 35px;
+	}
+
+	/*mobile menu*/
+	.sticky-wrapper.is-sticky .navbar-default .dropdown-wrapper {
+	    padding-top: 0;
+	}
+
+	.navbar-collapse{
+		box-shadow: none;
+		border: 0;
+	}
+	.sticky.navbar-default{
+		padding: 0;
+	}
+
+	.download-button{
+		margin-bottom: 60px;
+	}
+	.download-button a{
+		margin-bottom: 30px;
+	}
+
+	/*resume*/
+	.resume:before,
+	.resume:after{
+		left: 0;
+	}
+	.timeline-content:hover{
+		background-color: transparent !important;
+	}
+
+	/*fact wrap*/
+	.fact-wrap .count-wrap{
+		margin-bottom: 50px;
+	}
+	.fact-wrap .count-wrap:last-child{
+		margin-bottom: 0;
+	}
+
+	.latest-post-wrapper .blog-post-wrapper{
+		margin-bottom: 30px;
+	}
+
+	/*contact form*/
+	.wpcf7{
+		margin-bottom: 80px;
+	}
+
+	/*service wrap*/
+	.service-box{
+	    margin-bottom: 100px;
+	}
+
+}
+
+/* Landscape Mobile */
+@media only screen and (min-width : 480px) and (max-width : 767px) {
+	
+}
+
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width : 768px) and (max-width : 991px) {
+	
+	/*navigation*/
+	.navbar .nav>li {
+	  padding: 0 5px;
+	}
+	
+	.sticky-wrapper.is-sticky .navbar-default .navbar .nav>li,
+	.sticky-wrapper.is-sticky .navbar-default .nav>li {
+	  padding: 0 5px;
+	}
+
+	.navbar-default{
+		padding: 0;
+	}
+	.navbar-default .navbar-nav>li>a {
+	  font-size: 12px !important;
+	}
+
+	.navbar-nav li .dropdown-wrapper{
+		left: auto;
+	    right: 0;
+	}
+
+	.sticky.navbar-default {
+        padding: 2px 0;
+    }
+
+    /*home banner*/
+    .banner-style-two:before {
+	    width: 100%;
+	}
+
+	/*resume*/
+    .resume:before,
+    .resume:after{
+		left: 0;
+	}
+
+	.timeline-content:hover{
+		background-color: transparent !important;
+	}
+
+	/*service wrap*/
+	.service-box{
+	    margin-bottom: 100px;
+	}
+}
+
+
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width : 992px) and (max-width : 1199px) {
+	
+	/*menu*/
+	.navbar .nav>li{
+		padding: 0 8px;
+	}
+
+	.navbar-nav li .dropdown-wrapper{
+		left: auto;
+	    right: 0;
+	}
+
+	.navbar-default{
+		padding: 8px 0;
+	}
+
+	.sticky-wrapper.is-sticky .navbar-default{
+		padding: 5px 0;
+	}
+
+	.sticky-wrapper.is-sticky .navbar-default .navbar .nav>li{
+	    padding: 0 7px;
+	}
+
+
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width : 1200px) and (max-width : 1280px) {
+	.timeline>li{
+		margin-bottom: 0;
+	}
+	.social-counter {
+	    padding: 80px;
+	}
+	
+}
+
+
+
+/* Large devices (large desktops, 1920px and up) */
+@media (min-width : 1920px) {
+	
+	
+
+}

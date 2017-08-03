@@ -1,0 +1,136 @@
+/* =-=-=-=-=-=-= FEATURES STYLE =-=-=-=-=-=-= */
+
+/*Icon Default Style*/
+.icon-block.icon-default .tt-icon {
+    margin-bottom: 15px;
+} 
+
+.icon-block .tt-icon i{
+    -webkit-transition: all 400ms;
+    -moz-transition: all 400ms;
+    -o-transition: all 400ms;
+    transition: all 400ms;
+}
+
+.icon-block.icon-default:hover .tt-icon i{
+    color: #ff2a40;
+}
+
+.icon-block:hover .tt-icon.icon-hover-default i{
+    background-color: #ff2a40;
+    color: #ffffff;
+}
+
+.icon-block:hover .tt-icon.icon-hover-white i{
+    background-color: #ffffff;
+    color: #ff2a40 !important;
+}
+
+.icon-block:hover .tt-icon.icon-hover-black i{
+    background-color: #202020;
+    color: #ffffff;
+}
+
+
+/* Icon Position
+------------------------------------------- */
+
+/*icon position left*/
+
+
+.service-box.icon-position-left .tt-icon i {
+    float: left;
+    margin-top: 40px;
+    margin-left: 20px;
+}
+.service-box.icon-position-left .tt-icon i:hover {
+    float: left;
+    margin-top: 40px;
+    margin-left: 20px;
+}
+.service-box.icon-position-left h3 {
+    float: left;
+    margin-top: 78px;
+    margin-left: 20px;
+}
+.service-box.icon-position-left h3:hover {
+    float: left;
+    margin-top: 78px;
+    margin-left: 20px;
+}
+
+
+/*icon position Right*/
+
+
+.service-box.icon-position-right .tt-icon i {
+    float: right;
+    margin-top: 40px;
+    margin-right: 20px;
+}
+.service-box.icon-position-right .tt-icon i:hover {
+    float: right;
+    margin-top: 40px;
+    margin-right: 20px;
+}
+.service-box.icon-position-right h3 {
+    float: right;
+    margin-top: 78px;
+    margin-right: 20px;
+}
+.service-box.icon-position-right h3:hover {
+    float: right;
+    margin-top: 78px;
+    margin-right: 20px;
+}
+
+
+/*icon position center*/
+.icon-block.icon-position-center .tt-icon{
+    float: none;
+    text-align: center;
+    margin-bottom: 15px;
+}
+.icon-block.icon-position-center .tt-content{
+    text-align: center;
+}
+
+/*icon postition right*/
+.icon-block.icon-position-right .tt-icon{
+    float: right;
+    text-align: right;
+    margin-left: 20px;
+}
+.icon-block.icon-position-right .tt-content{
+    text-align: right;
+    overflow: hidden;
+}
+.icon-block i {
+    font-size: 28px;
+}
+.icon-block h3 {
+    font-size: 18px;
+    position: relative;
+}
+.icon-block .tt-icon a,
+.icon-block h3 a{
+    color: #202020;
+}
+.icon-block h3 a:hover{
+    color: #c03a2b;
+}
+
+.tt-icon.flat-icon i{
+    display: inline-block;
+}
+
+.icon-block.icon-default .tt-icon i{
+    font-size: 40px;
+}
+
+.icon-block .tt-icon a.theme-color, 
+.icon-block h3.theme-color,
+.icon-block h3 a.theme-color{
+    color: #ff2a40;
+}
+
