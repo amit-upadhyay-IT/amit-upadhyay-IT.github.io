@@ -18,7 +18,7 @@ Our guide to Jekyll covering installation, writing, customization, deployment, a
 
 Similar to documentation, but more detailed scenario-based walk-throughs covering a variety of topics.
 
-### [View source](https://github.com/amit-upadhyay-it/)
+### [View source](https://github.com/amit-upadhyay-it/amit-upadhyay-it.github.io)
 
 Learn from the source of others' Jekyll-powered sites.
 
