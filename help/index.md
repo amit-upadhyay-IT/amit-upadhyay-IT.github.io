@@ -18,7 +18,7 @@ Our guide to Jekyll covering installation, writing, customization, deployment, a
 
 Similar to documentation, but more detailed scenario-based walk-throughs covering a variety of topics.
 
-### [View source](https://github.com/jekyll/jekyll/wiki/sites)
+### [View source](https://github.com/amit-upadhyay-it/amit-upadhyay-it.github.io)
 
 Learn from the source of others' Jekyll-powered sites.
 
@@ -42,7 +42,7 @@ question!
 Get live support at **#jekyll** on **irc.freenode.net**, the official
 Jekyll IRC channel.
 
-### [jekyll/jekyll](https://github.com/jekyll/jekyll/issues)
+### [jekyll/jekyll](https://github.com/amit-upadhyay-it/amit-upadhyay-it.github.io/issues)
 
 Search through the issues on the main Jekyll development. Think you've
 found a bug? File a new issue.
