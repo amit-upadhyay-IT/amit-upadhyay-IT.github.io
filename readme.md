@@ -1,1 +1,1 @@
-# binomial.me
+# amit-upadhyay-it.github.io

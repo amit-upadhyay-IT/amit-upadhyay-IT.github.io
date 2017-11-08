@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Node.JS
+title: Community
 permalink: /community/
 ---
 
