@@ -30,27 +30,42 @@ overview: true
   </div>
 </section>
 
+<section class="free-hosting">
+  <div class="grid">
+    <div class="unit whole">
+      <div class="grid pane">
+        <div class="unit whole center-on-mobiles">
+          <div class="pane-content">
+            <h2 class="center-on-mobiles"><strong>My recent</strong> projects!</h2>
+            <p><em>Below are some of my recently made projects</em>. Most of them are open source, you may find them interesting. 
+</p>
+            <a href="/community/">Learn more about my projects&rarr;</a>
+          </div>
+        </div>
+        <div class="clear"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
 
 <section class="features">
   <div class="grid">
     <div class="unit one-third">
-      <h2>Simple</h2>
-      <p>
-        No more databases, comment moderation, or pesky updates to install—just <em>your content</em>.
+      <h2>Smart Pay</h2>
+      <p><em>An android app capable of doing transactions in offline mode securely. Enabling merchants to offer alternate payment solutions to their customers to drive cashless transactions.</em>
       </p>
-      <a href="/docs/usage/">How Jekyll works &rarr;</a>
+      <a href="/smary_pay/">More about Smart Pay &rarr;</a>
     </div>
     <div class="unit one-third">
-      <h2>Static</h2>
-      <p><a href="https://daringfireball.net/projects/markdown/">Markdown</a> (or <a href="http://redcloth.org/textile">Textile</a>), <a href="https://github.com/Shopify/liquid/wiki">Liquid</a>, HTML <span class="amp">&amp;</span> CSS go in. Static sites come out ready for deployment.</p>
-      <a href="/docs/templates/">Jekyll template guide &rarr;</a>
+      <h2>Crypt-git</h2>
+      <p><em>Got some important files which you don't want to share publicly but still want to use github as VCS for your softwares. <a href="https://github.com/amit-upadhyay-IT/crypt-git/">Crypt-git</a> can help you. It's command line utility written in Node.js</em></p>
+      <a href="https://github.com/amit-upadhyay-IT/crypt-git">Crypt-git details &rarr;</a>
     </div>
     <div class="unit one-third">
-      <h2>Blog-aware</h2>
-      <p>
-        Permalinks, categories, pages, posts, and custom layouts are all first-class citizens here.
-      </p>
-      <a href="http://import.jekyllrb.com">Migrate your blog &rarr;</a>
+      <h2>Touch Me(Game)</h2>
+      <p><em>An interesting <a href="https://play.google.com/store/apps/details?id=com.amitupadhyay.touchme">Game</a> which is based on your reflexes (how fast do you react?), hand-eye coordination and visual stimulus. The game is completely designed and developed by me.</em></p>
+      <a href="https://play.google.com/store/apps/details?id=com.amitupadhyay.touchme">More about Touch Me &rarr;</a>
     </div>
     <div class="clear"></div>
   </div>
@@ -58,33 +73,36 @@ overview: true
 <section class="quickstart">
   <div class="grid">
     <div class="unit golden-small center-on-mobiles">
-      <h3>Get up and running <em>in&nbsp;seconds</em>.</h3>
+      <h3>Deploy are private repo <em>in&nbsp;seconds with Crypt-git</em>.</h3>
     </div>
     <div class="unit golden-large code">
-      <p class="title">Quick-start Instructions</p>
+      <p class="title">Crypt-git Installation</p>
       <div class="shell">
         <p class="line">
-          <span class="path">~</span>
+          <span class="path">~/aupadhyay</span>
           <span class="prompt">$</span>
-          <span class="command">gem install jekyll bundler</span>
+          <span class="command">npm install -g crypt-git</span>
         </p>
         <p class="line">
-          <span class="path">~</span>
+          <span class="path">~/aupadhyay</span>
           <span class="prompt">$</span>
-          <span class="command">jekyll new my-awesome-site</span>
+          <span class="command">vim .cryptfiles</span>
+        </p>
+	<p class="line">
+          <span class="output">=> Add file name(s) into .cryptfiles</span>
         </p>
         <p class="line">
-          <span class="path">~</span>
+          <span class="path">~/aupadhyay</span>
           <span class="prompt">$</span>
-          <span class="command">cd my-awesome-site</span>
+          <span class="command">cg push <commit message></span>
         </p>
         <p class="line">
-          <span class="path">~/my-awesome-site</span>
+          <span class="path">~/aupadhyay</span>
           <span class="prompt">$</span>
-          <span class="command">bundle exec jekyll serve</span>
+          <span class="command">cg decrypt</span>
         </p>
         <p class="line">
-          <span class="output"># => Now browse to http://localhost:4000</span>
+          <span class="output">=> You can now work remotely.</span>
         </p>
       </div>
     </div>
