@@ -1,6 +1,6 @@
 ---
 title: Node.js guide
-permalink: /docs/home/
+permalink: /nodejs/docs/
 redirect_from: /docs/index.html
 ---
 
