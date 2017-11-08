@@ -3,22 +3,20 @@
     <a href="/">Home</a>
   </li>
   <li class="{% if page.url contains '/docs/' %}current{% endif %}">
-    <a href="/docs/home/">Node.js</a>
+    <a href="/docs/home/">Node</a>
   </li>
-  <li class="{% if page.url contains '/docs/' %}current{% endif %}">
-    <a href="/docs/home/">Android</a>
-  </li>
+  
   <li class="{% if page.author %}current{% endif %}">
-    <a href="/news/">News</a>
+    <a href="/news/">Android</a>
   </li>
   <li class="{% if page.url contains '/community/' %}current{% endif %}">
-    <a href="/community/">Community</a>
+    <a href="/community/">About</a>
   </li>
   <li class="{% if page.url contains '/help/' %}current{% endif %}">
     <a href="/help/">Help</a>
   </li>
   <li>
-    <a href="{{ site.stack_repository }}">StackOverflow</a>
+    <a href="{{ site.stack_repository }}">SO</a>
   </li>
   <li>
     <a href="{{ site.repository }}">GitHub</a>

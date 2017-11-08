@@ -1,5 +1,5 @@
 ---
-title: Welcome
+title: Node.js guide
 permalink: /docs/home/
 redirect_from: /docs/index.html
 ---
