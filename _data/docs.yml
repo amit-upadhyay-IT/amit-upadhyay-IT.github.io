@@ -1,6 +1,11 @@
 - title: Getting Started
   docs:
   - home
+  - nodejs_core_module
+  - calc_app
+  - npm_publish
+  - 04tooling_in_nodejs
+  - 05making_async_api
   - quickstart
   - installation
   - windows

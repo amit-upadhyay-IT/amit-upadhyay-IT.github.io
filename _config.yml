@@ -7,7 +7,7 @@ gauges_id: 503c5af6613f5d0f19000027
 google_analytics_id: UA-50755011-1
 google_site_verification: onQcXpAvtHBrUI5LlroHNE_FP0b2qvFyPq7VZw36iEY
 
-repository: https://github.com/jekyll/jekyll
+repository: https://github.com/amit-upadhyay-it/amit-upadhyay-it.github.io/
 stack_repository: https://stackoverflow.com/users/5411888/amit-upadhyay/
 
 timezone: America/Los_Angeles
@@ -39,12 +39,12 @@ collections:
 
 name: Amit Upadhyay • Programming Blog
 description: Transform your plain text into static websites and blogs
-url: https://jekyllrb.com
+url: https://binomial.me
 
 twitter:
-  username: jekyllrb
+  username: amit-upadhyay-it
 
-logo: /img/logo-2x.png
+logo: /img/logo-2x1.png
 
 plugins:
   - jekyll-avatar
