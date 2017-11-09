@@ -12,17 +12,46 @@
     <ul>
       {% for post in site.categories.release limit:5 %}
       <li class="{% if page.title == post.title %}current{% endif %}">
-        <a href="{{ post.url }}">Version {{ post.version }}</a>
+        <a href="{{ post.url }}">{{ post.title }}</a>
       </li>
       {% endfor %}
       <li>
         <a href="/docs/history/">History »</a>
       </li>
     </ul>
+
+    <h4>Android Skills</h4>
+    <ul>
+      {% for post in site.categories.android %}
+      <li class="{% if page.title == post.title %}current{% endif %}">
+        <a href="{{ post.url }}">{{ post.title }}</a>
+      </li>
+      {% endfor %}
+    </ul>
+
+    <h4>Node.JS</h4>
+    <ul>
+      {% for post in site.categories.nodejs %}
+      <li class="{% if page.title == post.title %}current{% endif %}">
+        <a href="{{ post.url }}">{{ post.title }}</a>
+      </li>
+      {% endfor %}
+    </ul>
+
+    <h4>Data Structures</h4>
+    <ul>
+      {% for post in site.categories.dsa %}
+      <li class="{% if page.title == post.title %}current{% endif %}">
+        <a href="{{ post.url }}">{{ post.title }}</a>
+      </li>
+      {% endfor %}
+    </ul>
+
+
     <h4>Other News</h4>
     <ul>
         {% for post in site.posts %}
-        {% unless post.categories contains 'release' %}
+        {% unless post.categories contains 'release' limit:15 %}
         <li class="{% if page.title == post.title %}current{% endif %}">
           <a href="{{ post.url }}">{{ post.title }}</a>
         </li>
