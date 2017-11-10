@@ -1,7 +1,6 @@
 - title: Android
   android:
   - home
-  - video-walkthroughs
   - navigation
   - orderofinterpretation
   - custom-404-page

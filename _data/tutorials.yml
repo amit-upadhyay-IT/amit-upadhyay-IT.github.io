@@ -1,11 +1,24 @@
-- title: Tutorials
+- title: Getting started
   tutorials:
   - home
-  - video-walkthroughs
-  - navigation
-  - orderofinterpretation
-  - custom-404-page
-  - convert-site-to-jekyll
+
+- title: Arrays
+  tutorials:
+  - pair-whose-sum-is-x
+  - majority-element-in-sorted-array
+  - majority-element-in-array
+  - largest-difference-in-array
+  - element-occurring-odd-times
+  - Separate 0's and 1's
+  - More...
+
+- title: Strings
+  tutorials:
+  - Find maximum occurring character.
+  - Remove duplicates from a given string.
+  - Check whether given two strings are rotation of each other.
+  - Reverse the words in a given sentence.
+  - More...
 
 #- title: Another section
 #  tutorials:

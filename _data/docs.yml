@@ -2,6 +2,7 @@
   docs:
   - home
   - nodejs_core_module
+  - the-event-loop
   - calc_app
   - npm_publish
   - 04tooling_in_nodejs

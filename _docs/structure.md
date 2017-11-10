@@ -3,39 +3,57 @@ title: Directory structure
 permalink: /docs/structure/
 ---
 
-Jekyll is, at its core, a text transformation engine. The concept behind the
-system is this: you give it text written in your favorite markup language, be
-that Markdown, Textile, or just plain HTML, and it churns that through a layout
-or a series of layout files. Throughout that process you can tweak how you want
-the site URLs to look, what data gets displayed in the layout, and more. This
-is all done through editing text files; the static web site is the final
-product.
-
-A basic Jekyll site usually looks something like this:
+<div class="note info">
+  <h5>Directory structure of this page</h5>
+  <p>
+    Contents which I will be covering.
+  </p>
+</div>
 
 ```sh
 .
-├── _config.yml
-├── _data
-|   └── members.yml
-├── _drafts
-|   ├── begin-with-the-crazy-ideas.md
-|   └── on-simplicity-in-technology.md
-├── _includes
-|   ├── footer.html
-|   └── header.html
-├── _layouts
-|   ├── default.html
-|   └── post.html
-├── _posts
-|   ├── 2007-10-29-why-every-programmer-should-play-nethack.md
-|   └── 2009-04-26-barcamp-boston-4-roundup.md
-├── _sass
-|   ├── _base.scss
-|   └── _layout.scss
-├── _site
-├── .jekyll-metadata
-└── index.html # can also be an 'index.md' with valid YAML Frontmatter
+
+├── Arrays
+|   └── Problems
+├── Strings
+|   └── Problems
+├── Pattern Matching
+|   ├── Problems
+├── Hashing
+|   ├── Theory
+|   └── Problems
+├── LinkedLists
+|   ├── Theory / Basic Questions
+|   └── Problems
+├── Stack/Queue
+|   ├── Theory / Basic Questions
+|   └── Problems
+├── Tree
+|   ├── Theory / Basic Questions
+|   └── Problems
+├── Heap
+|   ├── Theory / Basic Questions
+|   └── Problems
+├── Graph
+|   ├── Theory / Basic Questions
+|   └── Problems
+├── Bit manipulation
+|   └── Problems
+├── Divide and conquer
+|   ├── Theory / Basic Questions
+|   └── Problems
+├── Greedy
+|   ├── Theory / Basic Questions
+|   └── Problems
+├── Backtracking
+|   ├── Theory / Basic Questions
+|   └── Problems
+├── DP
+|   ├── Theory / Basic Questions
+|   └── Problems
+├── Puzzles
+|   ├── Problems
+└── 
 ```
 
 <div class="note info">
