@@ -1,5 +1,5 @@
 ---
-title: npm publish
+title: Npm publish
 permalink: /docs/npm_publish/
 ---
 

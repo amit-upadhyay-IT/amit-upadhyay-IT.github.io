@@ -59,7 +59,7 @@ int main()
 <div class="note unreleased">
   <h5>Approach 2</h5>
   <p>
-    Try to think about something better.
+    Try to look for simple approach like <code>kadane's algo</code> which can solve problem in linear time.
   </p>
 </div>
 
