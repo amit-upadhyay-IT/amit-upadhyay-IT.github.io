@@ -176,7 +176,7 @@ void check_pair(int *arr, int n, int x)
 <div class="note unreleased">
   <h5>Approach 4</h5>
   <p>
-    For C programming language the hash can't done at -ve elements, so in C we can implement it for negative elements
+    In C programming language the hash can't done at <code>-ve</code> elements, so in C we may need to write our own <code>hash function</code> which will return appropriate <code>index</code>, then only it can be implemented in C or C++. However in Java or python we can implement it for -ve elements by using inbuilt <code>HashMap</code> class.
   </p>
 </div>
 
