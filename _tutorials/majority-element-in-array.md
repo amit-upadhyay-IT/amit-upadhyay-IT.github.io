@@ -17,7 +17,7 @@ title: Majority element in array
   </p>
 </div>
 
-The problem can be solved using Moore Voting Algorithm (MVA).
+The problem can be solved using `Moore Voting Algorithm` (MVA).
 
 In this algorithm every element will try to up-vote itself.
 
