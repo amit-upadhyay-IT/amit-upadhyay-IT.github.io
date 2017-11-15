@@ -38,17 +38,3 @@
   - express
   - express-generator
 
-- title: Miscellaneous
-  docs:
-  - troubleshooting
-  - sites
-  - resources
-  - upgrading/0-to-2
-  - upgrading/2-to-3
-
-- title: Meta
-  docs:
-  - contributing
-  - maintaining
-  - conduct
-  - history
