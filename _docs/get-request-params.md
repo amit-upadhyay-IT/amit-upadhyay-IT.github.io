@@ -14,6 +14,12 @@ Below is an example of get request:
 http://localhost:4000/players/?name=%22amit%20upadhyay%22&age=19&year=2016
 ```
 
+or
+
+```
+http://localhost:4000/players?name=%22amit%20upadhyay%22&age=19&year=2016
+```
+
 You can see how the request params are passed in the above get request.
 
 <div class="note info">
