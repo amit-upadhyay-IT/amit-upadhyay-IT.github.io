@@ -1,5 +1,5 @@
 ---
-title: Express template engines intro
+title: Express template engines
 permalink: /docs/express-template-engines-intro/
 ---
 

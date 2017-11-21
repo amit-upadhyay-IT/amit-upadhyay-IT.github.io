@@ -18,6 +18,8 @@ app.use(exp.static(__dirname+"/public"));
 
 Meaning of `static` is that all your static info like `static html`, `images`, `css`, etc we are going to keep in a folder which is under directory named public.
 
+`static` is an **express middleware**. There are other **express middleware** like `bodyparser` (a 3rd party library which is used to get details from post request), `express-session` (used to manage the session beyond one request-response cycle). All the template engines are middleware too.
+
 #### Example:
 
 ```js

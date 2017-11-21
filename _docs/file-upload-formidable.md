@@ -1,5 +1,5 @@
 ---
-title: File upload using formidable
+title: File upload formidable
 permalink: /docs/file-upload-formidable/
 ---
 

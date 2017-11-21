@@ -45,4 +45,5 @@
   - express-template-engines-intro
   - ejs-engine
   - ejs-engine-modularized
+  - middlewares
 

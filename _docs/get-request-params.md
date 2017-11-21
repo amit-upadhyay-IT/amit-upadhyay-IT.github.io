@@ -1,5 +1,5 @@
 ---
-title: Getting request parameters
+title: Request parameters
 permalink: /docs/get-request-params/
 ---
 

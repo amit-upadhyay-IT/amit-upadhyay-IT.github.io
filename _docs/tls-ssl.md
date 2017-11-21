@@ -1,11 +1,11 @@
 ---
-title: Secure Network Communication - TLS/SSL
+title: TLS/SSL
 permalink: /docs/tls-ssl/
 ---
 
 
 <div class="note">
-  <h5>TLS/SSL</h5>
+  <h5>Secure Network Communication - TLS/SSL</h5>
 </div>
 
 
