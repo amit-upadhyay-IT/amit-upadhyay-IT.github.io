@@ -8,8 +8,8 @@ permalink: /docs/express-template-engines-intro/
   <h5>Express template engines</h5>
 </div>
 
-Now we will learn about some templates engines of Express, these are the templates which are used to create dynamic HTML pages on server side in node.js environment. We will also see twitter bootstrap(its a library which utilizes css, JavaScript and some images of its own to decorate your pages and provide some
-interactivity to your pages). We will study JavaScript template engines, creating project using EJS template, Twitter bootstrap, How to modularize code by separating routes, using EJS partials.
+Now we will learn about some templates engines of Express, these are the templates which are used to create **dynamic HTML pages** on server side in node.js environment. We will also see twitter bootstrap(its a library which utilizes css, JavaScript and some images of its own to decorate your pages and provide some
+interactivity to your pages). We will study JavaScript template engines, creating project using EJS template, Twitter bootstrap, How to **modularize** code by separating routes, using `EJS partials`.
 
 Typically in a project environment you need to know multiple template engines because every engine has got its own strength and weaknesses. Mainly we will discuss on EJS template engine.
 
@@ -27,9 +27,10 @@ As already mentioned that different template engines has different featured bein
 
 In any node.js application that we are writing to create a web server say your web based app is going to have 10 pages so you will be having 10 different paths to your application url.
 
-EG:
-something.com/page1,
-something.com/page2 ... so on.
+**Example**:
+
+`something.com/page1`,
+`something.com/page2`, `...` so on.
 And with different url user generally go to different pages and page navigation happens within the application itself. So far we are trying to create HTML page on the server side but it is very well possible that within your code itself you can write your HTML tags within “ ”.
 
 Example:
