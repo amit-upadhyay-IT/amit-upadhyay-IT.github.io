@@ -138,12 +138,12 @@ module.exports = router;
 Now to use them in your main file (`app.js` or `index.js`), you need to write:
 
 ```js
-var index = require('./routes/home');
-var users = require('./routes/city');
+var home = require('./routes/home.js');
+var city = require('./routes/city.js');
 ...
 ...
 app.use('/', home);
-app.use('/city', city);
+app.use('/:city', city);
 ```
 
 Now it's upto you which design pattern you will like to use. In my case I would like to use the later one if I have lots of routes in my application otherwise the first approach would be better.
