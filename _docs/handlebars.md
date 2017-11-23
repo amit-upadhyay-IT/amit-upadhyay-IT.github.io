@@ -1,5 +1,5 @@
 ---
-title: Handlebars Engine
+title: Handlebars Engine part 1
 permalink: /docs/handlebars/
 ---
 
@@ -20,13 +20,19 @@ permalink: /docs/handlebars/
 
 Here `{ {title}}` and `{ {body}}` are `Handlebars expressions`.
 
+**NOTE**:
+- Use double curly braces when you want to escape HTML.
+- Use triple curly braces when you don’t want to escape HTML.
+
 Handlebars is a bit similar to EJS template engine in structure and uses HTML markup syntax. Handlebars offers built in helpers and you can create your own helpers, Handlebars offers partials which allow for code reuse.
+
+Handlebars comes with some very useful built in helpers like `each`, `with`, `if`, `unless` etc. `each` helper is used to `loop` through array elements.
 
 Lets write an application using Handlebars. Handlebars syntax is little simpler than Jade.
 
 
 {: .note}
-**What our application will do?**<br>It will first ask for user login, after the the user will be directed to a page where he/she can enter the choice he wants to know about.
+**What our application will do?**<br>It will first ask for user login, after the the user will be directed to a page where he/she can enter the choice about which they wanna know. After that they will be directed to page about the info.
 
 
 ### Steps:
@@ -63,10 +69,89 @@ To retrieve data from the post request you need a middle-ware which is called `b
 $ npm i body-parser -s
 ```
 
+Now I think I have download the required libraries. Now lets start coding the app.
+
+First lets create the different routes to the application. The different routes might be: `/`, `/toLanding`, `/logout`, `/toCity`.
+
+- `/`: I would like to show the login option.
+- `/toLanding`: the page after the user is loggedin.
+- `/toCity`: Once the user selects option from the toLanding page.
+- `/logout`: When the user wants to logout.
 
 
+{: .unreleased .note}
+**Routes code**<br>file path: `./routes/routes.js`
 
+```js
+exports.loginPageHandler = function (req, res) {
+    res.render('login.handlebars', {});
+}
 
+exports.logoutHandler = function (req, res) {
+    req.session.destroy(); // destroys data saved in session object.
+
+    res.render('login.handlebars', {LOGGEDIN:false});
+}
+
+exports.landingPageHandler = function (req, res) {
+    req.session.loggedin = true;
+
+    var person;
+
+    if (req.session.userNmae) {
+        console.log('User name already in session. It is ' + req.session.UserName);
+        person = req.session.userName;
+    }
+    else
+    {
+        person = req.query.nm;
+        req.session.userName = person;
+        console.log('User name doesn\'t exists in session. Hence storing it in session store ' + person);
+    }
+
+    res.render('landingpage.handlebars', {
+        welcomeMessage:person,
+        LOGGEDIN:req.session.loggedin
+        }
+    );
+}
+
+exports.cityPageHandler = function (req, res) {
+    var interestValue = req.body.interest; /*this is a post request thus I am using body instead of params*/
+    var cityNameValue, taglineValue;
+
+    console.log('received interestValue as ' + interestValue);
+    var imageArray = [];
+
+    if (interestValue === 'history')
+    {
+        cityNameValue = 'Rome';
+        taglineValue = 'The city of earliest civilization';
+        imageArray = [1, 2];
+    }
+    else if (interestValue === 'fashion')
+    {
+        cityNameValue = 'Paris';
+        taglineValue = 'The fashion capital of the world';
+        imageArray = [1, 2, 3];
+    }
+    else if (interestValue = 'finance')
+    {
+        cityNameValue = 'New York';
+        taglineValue = 'The business capital of World';
+        imageArray = [1, 2, 3, 4, 5, 6];
+    }
+
+    res.render('city.handlebars', {
+        cityName:cityNameValue,
+        tagline:taglineValue,
+        welcomeMessage:req.session.userName,
+        imageArray:imageArray,
+        LOGGEDIN:req.session.loggedin
+        }
+    );
+}
+```
 
 
 
