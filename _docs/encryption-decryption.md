@@ -1,5 +1,5 @@
 ---
-title: Encryption and Decryption
+title: Encryption, Decryption
 permalink: /docs/encryption-decryption/
 ---
 
