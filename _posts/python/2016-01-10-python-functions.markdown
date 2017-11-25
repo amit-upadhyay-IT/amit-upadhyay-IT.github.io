@@ -1,6 +1,6 @@
 ---
 title: 'Python functions'
-date: 2016-10-05 12:01:40 +0200
+date: 2016-01-10 12:01:40 +0200
 author: amit-upadhyay-it
 categories: [python]
 ---
