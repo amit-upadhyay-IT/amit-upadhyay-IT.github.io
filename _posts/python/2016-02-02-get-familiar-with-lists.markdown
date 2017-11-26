@@ -501,4 +501,74 @@ Example:
 ['Delhi', 'Mumbai', 'Chennai]
 ```
 
+
+## Passing list to a function (List as arguments)
+
+Arguments are passed by assignment. The rationale behind this is two fold:
+
+1. The parameter passed in is actually a reference to an object (but the reference is passed by value).
+1. Some data types are mutable, but others aren't.
+
+When a list is passed to the function, the function gets a reference to the list. So if the function makes any changes in the list, they will be reflected back in the list.
+
+In a more generalized form,
+
+- If you pass a mutable object into a method, the method gets a reference to that same object and you can mutate it to your heart's delight, but if you rebind the reference in the method, the outer scope will know nothing about it, and after you're done, the outer reference will still point at the original object.
+
+- If you pass an immutable object to a method, you still can't rebind the outer reference, and you can't even mutate the object.
+
+Example:
+
+```py
+def try_to_change_list_contents(the_list):
+    print('got', the_list)
+    the_list.append('four')
+    print('changed to', the_list)
+
+outer_list = ['one', 'two', 'three']
+
+print('before, outer_list =', outer_list)
+try_to_change_list_contents(outer_list)
+print('after, outer_list =', outer_list)
+```
+Here parameter `outer_list` and argument `the_list` are alias for same object. So any changes made in `outer_list` will be reflected to `the_list` as lists as mutable.
+
+Output:
+
+```sh
+before, outer_list = ['one', 'two', 'three']
+got ['one', 'two', 'three']
+changed to ['one', 'two', 'three', 'four']
+after, outer_list = ['one', 'two', 'three', 'four']
+```
+
+> Note: Here, it becomes important to distinguish between the operations which modifies a list and operation which creates a new list. Operations which create a new list will not affect the original (argument) list.
+
+Let's look at some examples to see when we have different lists and when an alias is created.
+
+```py
+>>> a = [2, 4, 6]
+>>> b = a
+```
+
+will map `b` to `a`. To check whether two variables refer to same object (i.e. having same value), we can use `is` operator. So in our example:
+
+```py
+>>> a is b
+# will return "True"
+>>> a = [2, 4, 6]
+>>> b = [2, 4, 6]
+>>> a is b
+False
+```
+
+In first example, Python created one list, reference by a & b. So there are two references to the same object b. We can say that object [2, 4, 6] is aliased as it has more than one name, and since lists are mutable. So changes made using `a` will affect `b`.
+
+```py
+>>> a [1] = 10
+>>> print b
+# will print
+[2, 10, 6]
+```
+
 Thank you 👏
