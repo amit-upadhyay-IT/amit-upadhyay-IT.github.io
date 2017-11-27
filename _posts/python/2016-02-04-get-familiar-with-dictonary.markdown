@@ -112,23 +112,20 @@ Their order now depends on which key was slotted first; the second key will have
 
 The table order differs here, because one or the other key was slotted first. The technical name for the underlying structure used by CPython (the most commonly used Python implemenation) is a hash table, one that uses open addressing.
 
-<div class="note info">
-  <h5>PyCon 2010: The Mighty Dictionary about how CPython dict works</h5>
-</div>
+****
+
+{: .info .note}
+**You should probably watch these videos about how CPython `dict` works**
 
 
 <div class="videoWrapper" >
-     <iframe src="https://www.youtube.com/watch?v=C4Kc8xzcA68?rel=0" frameborder="0" allowfullscreen></iframe>
+     <iframe width="854" height="480" src="https://www.youtube.com/embed/C4Kc8xzcA68" frameborder="0" gesture="media" allowfullscreen></iframe>
 </div>
 
-or
-
-<div class="note info">
-  <h5>Brandon Rhodes The Dictionary Even Mightier PyCon 2017</h5>
-</div>
+<br>
 
 <div class="videoWrapper" >
-     <iframe src="https://youtu.be/66P5FMkWoVU?rel=0" frameborder="0" allowfullscreen></iframe>
+     <iframe width="854" height="480" src="https://www.youtube.com/embed/66P5FMkWoVU" frameborder="0" gesture="media" allowfullscreen></iframe>
 </div>
 
 
