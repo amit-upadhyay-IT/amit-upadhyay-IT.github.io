@@ -1,5 +1,5 @@
 ---
-title: 'Dictionary in python'
+title: 'Tuple in python'
 date: 2016-02-05 12:01:40 +0200
 author: amit-upadhyay-it
 categories: [python]

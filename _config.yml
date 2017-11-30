@@ -58,6 +58,9 @@ plugins:
   - jekyll-sitemap
   - jemoji
 
+disqus: amit-upadhyays-blog
+
+
 exclude:
   - .gitignore
   - CNAME
