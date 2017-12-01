@@ -453,24 +453,25 @@ and
 ```py
 sorted (list [, cmp [, key [, reverse]]])
 ```
+	
 
-Parameters mentioned in [] are optional in both the cases. These parameters allow us to customize the function/method.
+Parameters mentioned in `[]` are optional in both the cases. These parameters allow us to customize the function/method.
 
-`cmp`, argument allow us to override the default way of comparing elements of list. By default, `sort` determines the order of elements by comparing the elements in the list against each other. To overside this, we can use a user defined function which should take two values and return `-1` for `less than`, 0 for `equal to` and 1 for `greater than`.
+`cmp`, argument allow us to override the default way of comparing elements of list. By default, `sort` determines the order of elements by comparing the elements in the list against each other. To overside this, we can use a user defined function which should take two values and return `-1` for `less than`, `0` for `equal to` and `1` for `greater than`.
 
 `Key` argument is preferred over `cmp` as it produces list faster.
 
-Example:
+**Example 1**:
 
-The parameter ‘key’ is for specifying a function that transforms each element of list before comparison. We can use predefined functions or a user defined function here. If its user defined then, the function should take a single argument and return a key which can be used for sorting purpose.
+**The parameter key** is for specifying a function that transforms each element of list before comparison. We can use predefined functions or a user defined function here. If its user defined then, the function should take a single argument and return a key which can be used for sorting purpose.
 
 
-Reverse parameter can have a boolean value which is used to specify the order of arranging the elements of list. Value `True` for reverse will arrange the elements of list in descending order and value `False` for reverse will arrange the elements in ascending order. Default value of this parameter is `False`.
+**Reverse parameter** can have a boolean value which is used to specify the order of arranging the elements of list. Value `True` for reverse will arrange the elements of list in descending order and value `False` for reverse will arrange the elements in ascending order. Default value of this parameter is `False`.
 
 `sorted ()` function also behaves in similar manner except for it produce a new sorted list, so original is not changed. This function can also be used to sort any iterable collection. As `sort()` method does not create a new list so it can be little faster.
 
 ```py
->>> L1.sort ( )
+>>> L1.sort()
 >>> print L1
 # will produce
 [1, 5, 29, 46, 80, 100]
@@ -482,13 +483,13 @@ Reverse parameter can have a boolean value which is used to specify the order of
 # will produce
 ['Delhi', 'Mumbai', 'Chennai']
 ```
-Here we have specified len ( ) built in function, as key for sorting. So the list will get sorted by the length of the strings, i.e., from shorted to longest.
-sort will call len ( ) function for each element of list and then these lengths will be used for arranging elements.
+Here we have specified `len()` built in function, as key for sorting. So the list will get sorted by the length of the strings, i.e., from shorted to longest.
+sort will call `len()` function for each element of list and then these lengths will be used for arranging elements.
 
-Example:
+**Example 2**:
 
 ```py
->>> L4.sort ( )
+>>> L4.sort()
 >>> print L4
 # will produce
 [10, 20, 30, 'abc']

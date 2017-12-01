@@ -219,3 +219,61 @@ number appears after the smaller is %d\n", max_diff);
 }
 ```
 
+
+
+
+<div class="note unreleased">
+  <h5>Approach 4</h5>
+  <p>
+    You should probably think of this solution after you think of 1st solution on this post, as in this approach you can solve the problem using auxilary array in linear time.
+  </p>
+</div>
+
+If you analyse the first approach, you would find out that most of the time was going in search for the minimum element to the left of the current element in loop iteration, so for this purpose you can maintain an auxilary array which will store the minimum element by that position.
+
+For example,
+```py
+arr = [4, 3, 10, 2, 9, 1, 6]
+```
+
+we can have the minimumArray as:
+
+```py
+mini = [4, 3, 3, 2, 2, 1, 1]
+```
+
+### Code in python:
+
+```py
+li = [4, 3, 10, 2, 9, 1, 6]
+
+
+def makeMinCntArray(li):
+    mini = [None]*len(li)
+    mini[0] = li[0]
+    minimum = li[0]
+    for i in range(1, len(li)-1, 1):
+        if li[i] < mini[i-1]:
+            minimum = li[i]
+        mini[i] = minimum
+    return mini
+
+
+def getDiff(li):
+    maxDif = 0
+    d = makeMinCntArray(li)
+    # iterating from last index
+    for i in range(len(li)-1, 1, -1):
+        dif = li[i] - d[i-1]
+        if dif > maxDif:
+            maxDif = dif
+
+    return maxDif
+
+
+theMaxDif = getDiff(li)
+
+print theMaxDif
+
+# time is and extra space is linear
+```
