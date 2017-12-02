@@ -131,7 +131,19 @@ int main()
   </p>
 </div>
 
-Using bitwise xor to get oddly occurred element...
+Using `bitwise xor` to get oddly occurred element. You can read about the propery of xor:
+
+Example:
+
+```
+6^6 = 0
+```
+
+but,
+
+```
+6^6^6 = 6
+```
 
 ### Code:
 

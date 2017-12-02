@@ -275,5 +275,7 @@ theMaxDif = getDiff(li)
 
 print theMaxDif
 
-# time is and extra space is linear
+# time and extra space is linear
+
+Thank you
 ```
