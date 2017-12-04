@@ -114,7 +114,49 @@ P = Initialize(20)
 P.display()
 ```
 
-Also note that if no argument was passed while creating the object, then the `__init__` would have taken the default value of var and the output would have been `10`.
+Also note that if no argument was passed while creating the object, then the `__init__` would have taken the default value of var and the output would have been `10`. In Python, the first argument of every class method, including `__init__`, is always a reference to the current instance of the class and by convention, this argument is always named `self`. In case of `__init__`, `self` refers to the newly created object or the instance whose method was called. 
+Note that the `__init__` method never returns a value.
 
 
+### Importance of self
+
+Class methods have only one specific difference from ordinary functions - they must have an extra argument in the beginning of the parameter list. This particular argument is `self` which is used for referring to the `instance`. But you need not give any value for this parameter when you call the method. Python provides it automatically. `self` is not a `reserved` word in Python but just a strong naming convention and it is always convenient to use conventional names as it makes the program more readable. So while defining your class methods, you must explicitly list `self` as the first argument for each method, including `__init__`.
+
+To understand why you don't need to give any value for `self` during the method call, consider an example. Say you have a class called `My_Photo` and an instance of this class called `My_Object`. When you call a method of this `object` as `My_Object.method(arg1, arg2)`, this is automatically converted by Python into `My_Photo.method(My_Object, arg1, arg2)`. This feature makes `self` special and it also implies that if you have a method which takes no arguments, then you still have to define the method to have a `self` argument.
+
+Self is an instance identificator and is required so that the statements within the methods can have automatic access to the current instance attributes. Here is the example showing a class definition using `__init__` and `self.
+
+```py
+class Mobile:
+
+	price = 0
+	model = "Null"
+
+	def __init__(self, price, model = None):
+		self.price=price
+		self.model="Nokia Lumia 720"
+
+	def displaydata(self):
+	print self. price, self. model
+```
+
+**In the above example:**
+
+- The variables `price` and `model` are the class variables whose value would be shared among all instances of this class. This can be accessed as `Mobile.price`, `Mobile.model` from inside the class or outside the class.
+
+- The first method `__init__()` is a special method, which is called class `constructor` or `initialization` method that Python calls when you create a new instance of this class.
+
+- You declare other class methods like normal functions with the exception that the first argument to each method is `self`. While giving a call to the method, the instance name is automatically taken as the first argument for `self`.
+
+If after the given class definition of class Mobile, the following statements are executed
+
+```py
+M= Mobile(1000, 'Samsung')
+M.displaydata()
+```
+
+the output is
+```
+1000 Samsung
+```
 Thank you 👏
