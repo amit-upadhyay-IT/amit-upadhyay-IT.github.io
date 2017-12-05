@@ -159,4 +159,177 @@ the output is
 ```
 1000 Samsung
 ```
+
+### Class instances (Objects)
+
+In fact after the class definition is made, a class instance is created automatically once the definition is left normally i.e. the indentation of statements is removed and the class object is called. All the instances created with a given class will have the same structure and behaviour. They will only differ regarding their state, i.e regarding the value of their attributes.
+
+Classes and instances have their own namespaces, that is accessible with the dot ('.') operator. These namespaces are implemented by dictionaries, one for each instance, and one for the class. A class object is bound to the class name given in the class definition header. A class object can be used in two ways - by Instantiation and attribute references.
+
+**1. Instantiation: Creating instance objects**
+
+To create instances of a class, you call the class using class name and pass in whatever arguments its
+`__init__` method accepts.
+```py
+Test = T(1,100)
+```
+In the above example `T` is the instance of class Test.
+
+**2. Attribute Reference: Accessing attributes of a class**
+
+```py
+Object Name. Attribute Name
+```
+
+As discussed before all the names that were given during the class definition and hence were in the
+class's namespace are valid attribute names.
+
+Example:
+
+```py
+test.display()
+unit_test.display()
+print "Marks =", test. marks
+```
+
+**The search for the referenced attribute is done in the following sequence:**
+
+a) A class instance has a namespace implemented as a dictionary which is the first place in which attribute references are searched.
+
+b) When an attribute is not found there, and the instance's class has an attribute by that name, the search continues with the class attributes.
+
+c) If no class attribute is found, the object's `__getattr__()` method is called to satisfy the lookup. You will study about this method later in the chapter.
+
+Attribute assignments and deletions update the instance's dictionary, never a class's dictionary. If the class has a `__setattr__()` or `__delattr__()` method, this is called instead of updating the instance dictionary directly. You will learn about these methods later in this chapter.
+
+
+### Class Atttributes v/s Instance Attributes
+
+Attributes can be classified into - Class Attributes and Instance attributes.
+
+**Class Attributes**
+
+These belong to the class itself. These attributes will be shared by all the instances. Such attributes are defined in the class body part, usually at the top, for legibility. Consider the following example:
+
+
+Example:
+
+```py
+class Health_profile:
+		...
+	weight = 89
+	blood_group= 'B+'
+	...
+
+# To access this attribute, you use the dot notation:
+>>> Health_profile.weight
+89
+>>> Health_profile.blood_group
+B+
+```
+
+### Instances attributes
+
+As we have learnt, a class may define attributes for its instances. These are called instance attributes and they belong to each instance/object of a class. For example, for the class Health_profile given above, let H1 be an instance. So, the attributes of H1, such as the weight, are directly available through the dot operator:
+
+```py
+>>>H1.weight
+89
+```
+
+The dictionary for the instance attributes is also accessible by its `__dict__` variable about which you will learn in the next section. To list the attributes of an instance, we have two functions:
+
+i) `vars()` : This function displays the attributes of the instance in the form of a dictionary. Consider the following example:
+
+```py
+>>>vars(H1)
+{'weight': '89', 'blood group': 'B+'}
+```
+
+ii) `dir()`: This function lists more attributes than vars()because it is not limited to the dictionary of instance. It also displays the class attributes.
+
+For example
+```py
+>>>dir(H1)
+['__doc__', '__init__', '__module__', 'weight', 'blood_group',]
+```
+
+You can add, remove or modify attributes to an instance that were not defined by the class, such as the height in the following:
+
+```py
+>>> H1.height = 197 # adds 'height' as attribute
+>>>  vars(H1)
+{'weight': '89', 'blood group': 'B+',height='197'}
+>>>H1. height=180 #modifies the value of height
+>>> vars(H1)
+{'weight': '89', 'blood group': 'B+',height='180'}
+>>> del H1.height #deleted the attribute height
+>>> vars(H1)
+{'weight': '89', 'blood group'}
+```
+
+Here it should always be remembered that this feature of adding and deleting attributes should be used carefully, since by doing this, you start to have instances that have different behaviour than that is specified in the class.
+
+### Adding methods dynamically
+
+As you can add, modify and delete the attributes of a class dynamically i.e. at run time, similarly, you can add methods dynamically to an object or class. Consider the code given below:
+
+```
+pyclass Health_profile:
+		...
+		weight = 89
+		blood_group= 'B+'
+
+	def play():
+		print " Come on lets play"
+
+	H=Health_profile()
+	H.play=play()
+	H.play()
+```
+
+In the above example, play is just a function which does not receive `self`. There is no way by which `H` can know that play is a method. If you need `self`, you have to create a method and then bind it to the object. For this you have to import `MethodType` from `types` module as shown in the example below:
+
+
+```py
+from types import MethodType
+class Health_profile(object):
+		weight = 89
+		blood_group= 'B+'
+
+	def __init__(self,name):
+		self.name=name
+
+	def play():
+		print " Come on lets play", self.name
+
+	H=Health_profile("Shalini")
+	H.play=MethodType(play,H)
+	H.play()
+```
+
+In the above code, the built in function `MethodType` from the `types` module takes two arguments - the `name` of the function which has to be bound dynamically and the `instance` with which it has to bind the function. In the above example the `play` method will be bound only with the instance, `H`. No other instances of the class `Health_profile` will have `play` method. If we want the other instances also to have play method, then we have to add the method to the class and for that we make use of `self` as shown in the example below:
+
+```py
+class Health_profile(object):
+		weight = 89
+		blood_group= 'B+'
+
+	def __init__(self,name):
+		self.name=name
+
+	def play(self):
+		print " Come on lets play", self.name
+
+	Health_profile.play=play()
+	H1=Health_profile("Shalini")
+	H1.play()
+	H2=Health_profile("Ritu")
+	H2.play()
+```
+
+In the above example, note that no method is created with `types.MethodType`. This is because all functions in the body of the class will become methods and receive self unless you make it a `static` method.
+
+
+
 Thank you 👏
