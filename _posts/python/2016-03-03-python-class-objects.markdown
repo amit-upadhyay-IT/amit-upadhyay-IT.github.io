@@ -330,6 +330,197 @@ class Health_profile(object):
 
 In the above example, note that no method is created with `types.MethodType`. This is because all functions in the body of the class will become methods and receive self unless you make it a `static` method.
 
+### Accessing Attributes and methods
+
+Attributes of a class can also be accessed using the following built in methods / functions:
+
+- **getattr(obj, name[, default])**: This function is used to access the attribute of object.It is called when an attribute lookup has not found the referenced attribute in the class. The built in method for the same is object. __getattr__(self , name)which is called automatically if the referenced attribute is not found.
+
+For example:
+
+```py
+getattr(H1,weight)
+# Built in method for the same will be
+H1.__getattr__(self,weight)
+```
+
+The above statement returns the value of the weight attribute otherwise raises an `AttributeError` exception. Note that if the attribute is found through the normal mechanism, `__getattr__()` is not called.
+
+
+- **hasattr (obj,name)**: It is used to check if an attribute exists or not.
+
+For example:
+
+```py
+hasattr(H1,weight) # will return a True if 'weight' attribute exists
+```
+
+- **setattr (obj, name, value)**: It is used to set an attribute. Alternatively `object.__setattr__(self, name, value)` built in method is called when an attribute assignment is attempted , where name is the name of the attribute and value is its value that is to be assigned. If an attribute does not exist, then it would be created.
+
+For example:
+
+```py
+setattr(H1,weight,90)
+# The built in method for the same will be
+H1.__setattr__(self,weight,90)
+# Either of the above statements set the value of the attribute weight as 90.
+```
+
+- **delattr(obj, name)**: It is used to delete an attribute.The built in method for the same is `object.__delattr__(self , name)`.
+
+For example :
+
+```py
+delattr(H1,weight) # deletes the attribute weight
+# The built in method for the same will be
+H1.__delattr__(self,weight)
+```
+
+### Accessing Methods
+
+When an instance attribute other than the data attribute is referenced, the corresponding class is searched. If it is a valid class attribute (a function object), a method is created by pointing to the instance object and the function object. When this method object is called with an argument list, a new argument list is constructed from the instance object and the argument list. The function object is then called with this new argument list. The methods of a class can be accessed in the same manner as the data attributes i.e.
+
+```py
+ObjectName.Methodname
+```
+
+Now, putting all the concepts together, let us see the following example:
+
+```py
+class Health_profile:
+		weight=0
+		blood_group='B+'
+
+	def __init__(self,weight,blood_group):
+		self.weight=weight
+		self.blood_group=blood_group
+
+	def display(self):
+		print " Weight :" , self.weight
+		print "Blood Group : " , self.blood_group
+```
+
+The following statement will create an object (instance) of class `Health_profile`
+
+```py
+H2=Health_profile(61 ,'A+') # Assuming weight is 61 and blood group is A+
+```
+
+On executing the statement H1.display(), the output will be :
+
+```
+Weight :61
+Blood Group :A+
+```
+
+A function object need not always be textually enclosed in the class. We can also assign a function object to a local variable in a class. For example
+
+```py
+def test ( a ,b):
+	return x+y
+
+
+class myclass:
+		F=test(10,20)
+
+	def G(self):
+		return F
+	``` Using a function that is defined outside the class```
+
+	H=G
+```
+In the above example F, G and H are all attributes of class myclass. They refer to the function objects and hence are all methods of instances of myclass.
+
+Methods may also be referenced by global names in the same way as ordinary functions. The global scope associated with a method is the module containing its definition. Although global data in a method is rarely used, functions and modules imported into a global scope can be used by methods, functions and classes defined in it. Usually a class containing the method is itself defined in this global scope.
+
+For example
+
+```py
+class myclass:
+	Yf=x.f()
+
+	while true:
+		printYf()
+```
+
+In the above example, you will notice that it is not necessary to call a method right away. `x.f()` is a method object and can be stored(in Yf) and called later (in the while loop). In case of methods, the object is passed as the first argument of the function. So even if no argument is given in the function call while it was defined in the function definition, no error is flashed. In the above example `x.f()` is exactly equivalent to `myclass.f(x)`. So we can say that calling a method with a list of n arguments is equivalent to calling the corresponding function with an argument list that is created by inserting the
+method's object before the first argument.
+
+### Built in class attributes
+
+Every Python class keeps the following built-in attributes and they can be accessed using dot operator like any other attribute:
+
+i) `__dict__` : It gives the dictionary containing the class's namespace.
+
+ii) `__doc__` : It returns the class's documentation string(also called docstring) and if no docstring is defined for a class this built in attribute returns `None`
+
+iii) `__name__`: It gives the class name.
+
+iv) `__module__`: It specifies the module name in which the class is defined. This attribute is called `__main__` in interactive mode.
+
+v) `__bases__` : It gives a possibly empty tuple containing the base classes, in the order of their occurrence in the base class list. (You will learn about base classes in the next chapter on Inheritance)
+
+For the previously defined class `Test` let's try to access all the above built in attributes:
+
+```py
+class Test:
+'''A sample class to demonstrate built in attributes'''
+
+		rollno=1
+		marks=75
+
+
+	def __init__(self,rollno,marks):
+		self.rollno=rollno
+		self.marks=marks
+
+	def display(self):
+		print " Roll No : " , self.rollno
+		print "Marks : " , self.marks
+
+	print "Test.__doc__:" , Test.__doc__
+	print "Test.__name__:" , Test.__name__
+	print "Test.__module__:" , Test.__module__
+	print "Test.__bases__:" , Test.__bases__
+	print "Test.__dict__:" , Test.__dict__
+```
+
+### Using `__del()__`
+
+This function is called when the instance is about to be destroyed. This is also called a destructor. It calls the method - `object.__del__(self)`
+
+When `__del()__` is invoked in response to the module being deleted (for example , when the execution of the program is done), the other global variables referenced by __del()__ method may already have been deleted or must be in the process. Let us understand the concept through the class Test whose instance is
+T1.
+
+Consider the following command is given
+
+```py
+>>> del T1
+```
+
+The above command doesn't directly call `T1.__del__()`. First the reference count is decremented for T1 by one and `__del()__` is called only when T1's reference count reaches zero i.e. when all the variables referenced by T1 have been deleted.
+
+### Using `__str()__`
+
+It is a special function which returns the string representation of the objects. It calls the method `object.__str__(self)`. If the class defines a `__str__` method, Python will call it when you call the `str()` or use print statement. The `str()` built-in function, when used along with the print statement computes the `informal` string representation of an object. Consider the following example of the class Test defined above.
+
+```py
+class Test:
+		..........
+		...........
+
+	def __str__(self):
+		return "Hello, How are you?"
+```
+
+Now give the following command on the Python interpreter:
+
+```py
+>>> T=Test()
+>>> print T
+	Hello, How are you?
+```
+When you give the command to `print T`, Python calls `str(T)` to get the string representation of `T`. If the class of `T` has a `__str__` method, `str(T)` becomes a call to `T.__str__()`. This returns the string to print.
 
 
 Thank you 👏
