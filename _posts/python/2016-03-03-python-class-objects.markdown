@@ -57,13 +57,17 @@ Note that calling a method on an object can also change the object. This implies
 Consider the example below:
 
 ```py
-x= [10]
-def List_ex():
-	x.append(20)
+x = [10]
+
+
+def list_ex():
+    x.append(20)
+
 
 def add_list():
-	x=[30,40]
-	x.append(50)
+    x = [30, 40]
+    x.append(50)
+
 
 print x
 list_ex()
@@ -75,8 +79,8 @@ print x
 The above example prints
 ```
 [10]
-[10,20]
-[30,40,50]
+[10, 20]
+[10, 20]
 ```
 The `list_ex()` calls the append method of the `global x`, whereas the `add_list()`, `x` refers to a `local x`.
 
@@ -124,7 +128,7 @@ Class methods have only one specific difference from ordinary functions - they m
 
 To understand why you don't need to give any value for `self` during the method call, consider an example. Say you have a class called `My_Photo` and an instance of this class called `My_Object`. When you call a method of this `object` as `My_Object.method(arg1, arg2)`, this is automatically converted by Python into `My_Photo.method(My_Object, arg1, arg2)`. This feature makes `self` special and it also implies that if you have a method which takes no arguments, then you still have to define the method to have a `self` argument.
 
-Self is an instance identificator and is required so that the statements within the methods can have automatic access to the current instance attributes. Here is the example showing a class definition using `__init__` and `self.
+Self is an instance identificator and is required so that the statements within the methods can have automatic access to the current instance attributes. Here is the example showing a class definition using `__init__` and `self`.
 
 ```py
 class Mobile:
