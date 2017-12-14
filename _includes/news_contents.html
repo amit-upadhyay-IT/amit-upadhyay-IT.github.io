@@ -69,6 +69,15 @@
       {% endfor %}
     </ul>
 
+    <h4>GitHub</h4>
+    <ul>
+      {% for post in site.categories.github %}
+      <li class="{% if page.title == post.title %}current{% endif %}">
+        <a href="{{ post.url }}">{{ post.title }}</a>
+      </li>
+      {% endfor %}
+    </ul>
+
 
 <!--
     <h4>Other News</h4>

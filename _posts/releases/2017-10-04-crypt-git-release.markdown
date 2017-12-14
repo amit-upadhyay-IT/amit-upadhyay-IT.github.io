@@ -9,7 +9,7 @@ categories: [release]
 > Got some important files which you don't want to share publicly but still want to use github as VCS for your softwares. Crypt-git can help you.
 
 
-crypt-git is a command line utility written in node.js which enables to encrypt important files when you push them on GitHub repo and decrypt then when you want to work remotely. Doing this is very very simple with 'crypt-git'.
+crypt-git is a command line utility written in node.js which enables to encrypt important files when you push them on GitHub repo and decrypt then when you want to work locally on your system. Doing this is very very simple with 'crypt-git'.
 
 ## Installation
 
@@ -24,23 +24,16 @@ $ npm install -g crypt-git
 You just need to maintain a file `.cryptfiles` where you need to specify the `file name(s)` which you want to encrypt.
 
 ##### create .cryptfiles file:
-
-```sh
-$ touch .cryptfiles
-```
+`touch .cryptfiles`
 
 ##### edit .cryptfiles file
+`vim .cryptfiles`
 
-```sh
-$ vim .cryptfiles
-```
-
-See an example [here](https://github.com/amit-upadhyay-IT/crypt-git/blob/master/.cryptfiles)
+See an example [here](https://github.com/amit-upadhyay-IT/crypt-git/blob/master/.cryptfiles), this encrypts all the files named `amit.txt` in the repo.
 
 
 #### To push:
-
-```sh
+```
 $ cg push <commit message>
 ```
 
@@ -56,13 +49,11 @@ Now all your important files mentioned in `.cryptfiles` file are pushed on your 
 
 #### To decrypt:
 
-When you want to work remotely with your repository (without any encrypted file) then all you need is:
-
-```sh
-$ cg decrypt
+When you want to work locally with your repository (without any encrypted file) then all you need is:
 ```
-
-**NOTE**: cg is abbreviation for crypt-git
+cg decrypt
+```
+NOTE: cg is abbreviation for crypt-git
 
 When you perform `cg decrypt`, the encrypted file gets decrypted on your local machine.
 
@@ -70,7 +61,7 @@ Cool right?
 
 ## Usage
 
-```sh
+```js
 $ cg push <commit message> // to push with the encrypted content.
 
 cg decrypt // to decrypt the encrypted files
