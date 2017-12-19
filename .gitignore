@@ -3,3 +3,6 @@ _site/
 pkg/
 test/
 .idea/
+
+BitManip/
+Heaps/
