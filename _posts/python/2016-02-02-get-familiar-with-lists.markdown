@@ -197,8 +197,43 @@ for i in range ( len (L1)):
 
 > Note: for loop in empty list is never executed
 
+### Using enumerate
 
-### Appending in the list
+The [enumerate() function](https://docs.python.org/2/library/functions.html#enumerate) adds a counter to an iterable. So for each element in cursor, a tuple is produced with `(counter, element);` the for loop binds that to `row_number` and `row`, respectively.
+
+Example:
+
+```sh
+>>> elements = ('foo', 'bar', 'baz')
+>>> for elem in elements:
+...     print elem
+... 
+foo
+bar
+baz
+>>> for count, elem in enumerate(elements):
+...     print count, elem
+... 
+0 foo
+1 bar
+2 baz
+```
+
+By default, `enumerate()` starts counting at `0` but if you give it a second integer argument, it'll start from that number instead:
+
+Example:
+
+```sh
+>>> for count, elem in enumerate(elements, 42):
+...     print count, elem
+... 
+42 foo
+43 bar
+44 baz
+```
+
+Refered from [here](https://stackoverflow.com/questions/22171558/what-does-enumerate-mean)
+## Appending in the list
 
 Appending a list is adding more element(s) at the end of the list. To add new elements at the end of the list, Python provides a method append ( ).
 
@@ -234,7 +269,7 @@ will add all the elements of list `A` at the end of the list `L1`.
 > Remember: `A` remains unchanged.
 
 
-### Updating array elements
+## Updating array elements
 
 Updating an element of list is, accomplished by accessing the element & modifying its value in place. It is possible to modify a single element or a part of list. For first type, we use index to access single element and for second type, list slice is used. We have seen examples of updations of an element of list. 
 
@@ -294,7 +329,7 @@ Example:
 ```
 
 
-### Deleting Elements
+## Deleting Elements
 
 It is possible to delete/remove element(s) from the list. There are many ways of doing:
 
@@ -308,7 +343,7 @@ It is possible to delete/remove element(s) from the list. There are many ways of
 
 **Let us study all the above methods in details**:
 
-#### Pop()
+### Pop()
 
 It removes the element from the specified index, and also return the element which was removed.
 
