@@ -11,6 +11,9 @@ Tutorials provide more detailed, narrative instruction that cover a variety of D
 * Detailed explanation about the pros and cons for different strategies.
 * Instruction that combines various techniques from across.
 
+{: .note}
+The subsections in the tutorials have been partitioned in a beautiful way. You would not face all hard sub-topics at once, generally, people leave the last part of the chapter (just because they find it difficult to cover) but here you will find them easy to cover because the difficult topics are covered in between the posts also in a synchronized way (and you will not even know how easily you learned it).
+
 
 {: .info .note}
 **Note:** The Tutorials section is new, so there aren't many tutorials yet. You can add a tutorial here to help populate this section.

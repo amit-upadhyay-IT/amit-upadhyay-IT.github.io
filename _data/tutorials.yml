@@ -11,6 +11,18 @@
   - element-occurring-odd-times
   - separate-0's-and-1's
 
+- title: Heaps
+  tutorials:
+  - heap-introduction
+
+- title: LinkedList
+  tutorials:
+  - linkedlist-introduction
+
+- title: LinkedList
+  tutorials:
+  - bit-manipulation-introduction
+
 - title: Strings
   tutorials:
   - Find maximum occurring character.
