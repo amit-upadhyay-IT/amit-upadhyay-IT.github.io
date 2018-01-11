@@ -4,8 +4,6 @@ pkg/
 test/
 .idea/
 
-questions.md
-
-# BitManip/
-# Heaps/
-# LinkedList/
+BitManip/
+Heaps/
+LinkedList/
