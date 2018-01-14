@@ -23,7 +23,7 @@ The subsections in the tutorials have been partitioned in a beautiful way. You w
 
 I welcome your tutorial contributions. To add your tutorial:
 
-1. Fork [this](https://github.com/amit-upadhyay-IT/probable-octo-disco) project by clicking the **Fork** button in the upper-right corner of the [probable-octo-disco Github repo](https://github.com/amit-upadhyay-IT/probable-octo-disco).
+1. Fork [this](https://github.com/amit-upadhyay-IT/proton) project by clicking the **Fork** button in the upper-right corner of the [proton Github repo](https://github.com/amit-upadhyay-IT/proton).
 2. Add your tutorial in the `respecive topic` collection.
 3. Follow the regular git workflow to submit the pull request.
 
