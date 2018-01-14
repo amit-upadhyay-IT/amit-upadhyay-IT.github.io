@@ -4,6 +4,6 @@ pkg/
 test/
 .idea/
 
-# BitManip/
-# Heaps/
-# LinkedList/
+BitManip/
+Heaps/
+LinkedList/
