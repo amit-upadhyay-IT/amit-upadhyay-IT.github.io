@@ -5,6 +5,9 @@ permalink: /tutorials/home/
 redirect_from: /tutorials/index.html
 ---
 
+{: .warning .note}
+## [It's hard to write algorithms when you don't know what they are.]() - Amit Upadhyay
+
 Tutorials provide more detailed, narrative instruction that cover a variety of Data Structure topics/problems. Tutorials might contain the following:
 
 * Step-by-step processes through particular scenarios or challenges.

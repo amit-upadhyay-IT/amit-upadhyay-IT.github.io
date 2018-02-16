@@ -63,12 +63,12 @@ We know that if height of a complete binary tree is `h` then it has `2^(h+1) - 1
 Thus, we prefer storing all the elements in the array and we can interpret the array as a binary tree or heap.
 
 ```
+         100
+       /    \
+      10     20
+     /  \   /
+    1    4 3
 
-			100
-
-	10				20
-
-1		4		3
 ```
 
 Consider the above tree lets use heap to represent the tree.
@@ -86,17 +86,17 @@ index:		  1 ,  2,  3, 4, 5, 6
 
 Assume `i` is index of parent node, then
 
-```
-- index_left_child = i * 2
-- index_right_child = i * 2 + 1
-```
+
+- Index of left child = `i * 2`
+- Index of right child = `i * 2 + 1`
+
 
 Assume `ind` to be index of either left child or index of right child.
 
 then:
-```
-- root_index = floor (ind/2)
-```
+
+- Root index = `floor (ind/2)`
+
 
 **POINTS**:
 
@@ -113,16 +113,15 @@ then:
 ## Properties of complete binary tree:
 
 ```
-			*				=> Height = 2
-
-	*				*		=> Height = 1
-
-*		*		*		*	=> Height = 0
-
+        *	=> Height = 2
+       / \
+      *	  *	=> Height = 1
+     / \ / \
+    *  * *  *	=> Height = 0
 ```
 
 {: .info .note}
-**Height of a node**: The number of edges from that node to the left node with longest po ssible length. i.e. longest possible number of edges from that node to any leaf.
+**Height of a node**: The number of edges from that node to the left node with longest possible length. i.e. longest possible number of edges from that node to any leaf.
 
 **NOTE**:
 - in almost complete binary tree, the nodes at same level can also have different height
@@ -138,9 +137,42 @@ then:
 
 ## Process of building heap
 
-i.e. given an array of elements, how would you build a heap out of array.
+**Given an array of elements, how would you build a heap out of array?**
 
-`pass`
+Let's make a max-heap.
+
+- One approach for making a max-heap is to sort the array in descending order.
+- Time taken would be O(n*log2(n)), but I would want to perform the task of construction in less time.
+
+Consider the below example which is a almost complete binary tree and try to construct a max-heap
+
+```
+        1
+       / \
+      2   3
+     / \
+    4   5
+```
+
+In a almost complete binary tree:
+
+- The starting index of the leaf is : `floor(n/2) + 1`
+- The ending index of leaf is : `n`
+
+So in the above tree we have leafs from index 3 to index 5 (where indexing starts from 1)
+
+**Why are we interested in finding out the leaf?**
+
+Every leaf is nothing but a tree with one node and every tree with one node is already a heap (either min-heap or max-heap), so we can say that the building blocks of the heap are the leaf in the tree.
+
+We will use the building blocks (i.e. leaf) to form the heap.
+
+First let's look at defination of Heapify: **The process of converting a binary tree into a Heap data structure.**
+
+So we can say that one way to construct a heap is **going to each node from the end and then converting the node into a heap (i.e. Heapify).** But, note that the leafs are already heap, so we need to start this process of Heapify from the first non-leaf node i.e. from `floor(n/2)` to `1`.
+
+Below you will study more about Heapify.
+
 
 ## Algorithm to heapify
 
