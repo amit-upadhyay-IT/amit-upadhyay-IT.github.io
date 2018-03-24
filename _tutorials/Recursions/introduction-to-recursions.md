@@ -14,7 +14,7 @@ title: All about Recursions
 - With recursion you can solve the problem by solving the smaller occurrences of the problem. Recursions can help solve certain kind of problems.
 
 
-**Example1: Count people in a column.**
+## Example1: Count people in a column.
 
 Suppose that you are sitting in a first row and you want to know how many people are sitting behind you. But you can see the person sitting on the last person so you are allowed to ask the person sitting just behind you. How would you count the number of people sitting behind you?
 
@@ -58,7 +58,7 @@ if __name__ == '__main__':
         print 'its not possible'
 ```
 
-**Exercise2: Power function**
+## Exercise2: Power function
 
 Write a recursive function to find the `y`th power of a number `x`.
 
@@ -167,3 +167,49 @@ def power_optimized(x, y):
 ```
 
 Here the value gets computed only once and it can be used again in the same stack at the time of backtracking. So time complexity is **O(log2(n))**.
+
+## Example 3: Palindrome
+
+Write a function that accepts a string and returns `ture` if it reads the same forward as backwards.
+
+First, think that **How is this problem self-similar?**
+
+Can you answer this question by knowing whether some smaller part of the string is palindrome or not?
+
+One way could be comparing the first and the last character in the string, if both of them matches then move forward and compare the second and the second last character in the string, and go on repeating this untill you see that left pointer gets equal or exceeds the right pointer.
+
+So, the base case might be the case when we see that the left pointer exceeds the right pointer. The `left` and `right` pointer is nothing but two pointers pointing to the left character and right character of the string.
+
+Example in python:
+
+```py
+def is_palindome(s, first, last):
+    s = s.lower()
+    if s[first] != s[last]:
+        return False
+    elif first >= last:
+        return True
+    else:
+        return is_palindome(s, first+1, last-1)
+```
+The recursive nature can also be observed in a way that, we can slice of the first letter and the last letter from the string and compare them, if found un-equal then return false otherwise again slice of the first letter and last letter from that string and compare the letters. At some point we have to stop this process, i.e. the base case. **What strings are easy to know if they are palindromes or not?** We can say that a one character or an empty string is palindrome. So, the base case would be if the length of string gets less than 2 we return `true`.
+
+Example code:
+
+```py
+def is_palin(s):
+    s = s.lower()
+    if len(s) < 2:
+        return True
+    else:
+        f_char = s[0]
+        l_char = s[-1]
+        if f_char is l_char:
+            return is_palin(s[1:-1])
+        else:
+            return False
+```
+
+The **time complexity** for the above function is `O(n)`, where `n` is the length of the string to be checked.
+
+Also, if you make the recursion call stack using the tree, then you will find that a skewed tree will be formed (as there is single recursion involved). So **Space complexity** is `O(n)`, note that is the space which is being formed by the programming stack.
