@@ -5,23 +5,32 @@
 - title: Arrays
   tutorials:
   - pair-whose-sum-is-x
+  - separate-0's-and-1's
   - majority-element-in-sorted-array
   - majority-element-in-array
-  - largest-difference-in-array
   - element-occurring-odd-times
-  - separate-0's-and-1's
+  - largest-difference-in-array
+
 
 - title: Heaps
   tutorials:
   - heap-introduction
 
+- title: Recursions & Backtracking
+  tutorials:
+  - recursion-introduction
+
 - title: LinkedList
   tutorials:
   - linkedlist-introduction
 
-- title: LinkedList
+- title: Bit Manipulation
   tutorials:
   - bit-manipulation-introduction
+
+- title: Stacks
+  tutorials:
+  - stack-introduction
 
 - title: Strings
   tutorials:

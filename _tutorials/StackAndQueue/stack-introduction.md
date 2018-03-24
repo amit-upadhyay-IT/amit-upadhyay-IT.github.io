@@ -1,7 +1,7 @@
 ---
 layout: tutorials
 permalink: /tutorials/stack-introduction/
-title: Stack
+title: Stack Introduction
 ---
 
 {: .info .note}
