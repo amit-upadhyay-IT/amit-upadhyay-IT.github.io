@@ -16,9 +16,12 @@
   tutorials:
   - heap-introduction
 
-- title: Recursions & Backtracking
-  tutorials:
-  - recursion-introduction
+# - title: Recursions & Backtracking
+#   tutorials:
+#   - recursion-introduction
+#   - searching
+#   - backtracking
+#   - fractals
 
 - title: LinkedList
   tutorials:
