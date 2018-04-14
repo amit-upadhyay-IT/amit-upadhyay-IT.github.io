@@ -20,8 +20,9 @@
 #   tutorials:
 #   - recursion-introduction
 #   - searching
-#   - backtracking
+#   - exhaustive-search
 #   - fractals
+#   - backtracking
 
 - title: LinkedList
   tutorials:
