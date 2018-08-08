@@ -1,9 +1,0 @@
-_site/
-*.swp
-pkg/
-test/
-.idea/
-
-BitManip/
-LinkedList/
-DisjointSet/

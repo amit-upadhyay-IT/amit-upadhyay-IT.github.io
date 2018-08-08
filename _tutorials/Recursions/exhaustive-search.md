@@ -28,7 +28,7 @@ Search(decisions, prefix):
 
 **What is prefix above?**
 
-`prefix` is really important thing. It is some data storage entity, it can be a string or a vector and any other type which may store one of the possible output in some call stack out of many call stacks. This parameter is remembering a set of choices we have made before the current call. If the prefix has `3` characters in it that means there were `3` calls before the current call of the function and those characters of that string (or set) represent the choices that were made by those calls. And I am gonna use the `prefix` and the current number to contribute overall answer to the problem. At some point you get to the point where `prefix` is whole answer.
+`prefix` is really important thing. It is some data storage entity, it can be a string or a vector and any other type which may store one of the possible output in some call stack out of many call stacks. This parameter is remembering a set of choices we have made before the current call. If the prefix has `3` characters in it that means there were `3` calls before the current call of the function and those characters of that string (or set) represent the choices that were made by those calls. And I am gonna use the `prefix` and the current solution (number or char of the current subproblem) to contribute overall answer to the problem. At some point you get to the point where `prefix` is whole answer.
 
 - Often the search space consists of many decisions, each of which has several available choices. Example: When enumerating all 5-letter string, each of the 5-letter is a decision, and each of those decision has 26 possible choices.
 
@@ -149,7 +149,7 @@ Let's look at the base case, we can keep a counter which will keep count of the 
 
 With this much of hint try to solve the problem on your own.
 
-If you have solved it then you are great. But if you are stuck it's okay because it's a different kind of recursion problem where you might need the help of the above general proposed algorithm.
+If you have solved it then you are doing great. But if you are stuck it's okay because it's a different kind of recursion problem where you might need the help of the above general proposed algorithm.
 
 Also, there is one more interesting approach which I like very much. In this approach, you create a tree which will represent the solution and then write the code for that.
 

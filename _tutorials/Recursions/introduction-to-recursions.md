@@ -9,35 +9,39 @@ title: All about Recursions
 
 **Recursion:** Defining an opration in terms of itself. 
 
-**Recursive Programming:** Writing functions that call themselves to solve problem recursively. 
+**Recursive Programming:** Writing functions that call themselves directly or indirectly to solve problem recursively. 
 
-- With recursion you can solve the problem by solving the smaller occurrences of the problem. Recursions can help solve certain kind of problems.
+- With recursion you can solve the problem by solving the smaller occurrences of the problem. Recursions can help solve certain kind of problems very easily.
+
+Below I have discussed few examples on recursions.
 
 
-## Example1: Count people in a column.
+## Example 1: Count people in a column.
 
-Suppose that you are sitting in a first row and you want to know how many people are sitting behind you. But you can see the person sitting on the last person so you are allowed to ask the person sitting just behind you. How would you count the number of people sitting behind you?
+Suppose that you are sitting in a first row and you want to know how many people are sitting behind you. But you can't see the person sitting on the last row so you are allowed to talk the person sitting just behind you. **How would you count the number of people sitting behind you?**
 
-If you want to solve this problem recursively then you need to describe the task in terms of itself i.e. ask the problem to the person sitting next to you. He will ask the same problem to the person sitting next to him and so on... The person sitting at the end will know that there is nobody sitting behind so he/she will reply `0` to the person ahead and the second last person will reply 1 to the person sitting ahead. In this way, we first person will get to know how many people are sitting behind. If you ask someone "How many people are behind you?", then they answer that by asking someone else "How many people are behind you?", i.e. they describe the solution to their problem interms of the same problem itself.
+If you want to solve this problem recursively then you need to describe the task in terms of itself i.e. ask the problem to the person sitting next to you. He will ask the same problem to the person sitting next to him and so on... The person sitting at the end will know that there is nobody sitting behind so he/she will reply `0` to the person ahead and the second last person will reply `0 + 1` to the person sitting ahead. In this way, the first person will get to know how many people are sitting behind. If you ask someone "How many people are behind you?", then that some answers you by asking someone else "How many people are behind you?", i.e. they describe the solution to their problem interms of the same problem.
+
+Let's try to code it.
 
 Each recursive algorithm involves two cases:
 
 1. **Base case**: A simple occurrence that can be answered directly.
 2. **Recursive case**: A more complex occurrence of the problem that cannot be directly answered, but can insted be described in terms of smaller occurrences of the same problem.
 
-Note that the base case in this recursion is when the last person says that there is nobody behind me.
+Note that the base case in the above recursive problem is when the last person says that there is nobody behind me.
 
 {: .info .note}
 **Ask yourself, `How is this task self-similar?`**
 
-So, let's try to implement this in a program.
+And then implement this in a program.
 
 ```py
 import random
 
 
 # count consequitive ones
-def count_it(li, ind):
+def count_people_helper(li, ind):
     # base case: when we found that next number if zero
     if li[ind] == 0:
         return 0
@@ -45,20 +49,24 @@ def count_it(li, ind):
         # val = count_it(li, ind+1)
         # val = val + 1  # backtracking
         # return val  # backtracking
-        return 1 + count_it(li, ind+1)
+        return 1 + count_people_helper(li, ind+1)
+
+
+def count_people(li):
+    return count_people_helper(li, 0)
 
 
 if __name__ == '__main__':
     n = random.randint(3, 66)
     li = [0]*2*n
     li[0:n] = [1]*n  # 1 represents the people in the row, among 2n capacities
-    if n == count_it(li, 0):
+    if n == count_people(li):
         print 'success'
     else:
         print 'its not possible'
 ```
 
-## Exercise2: Power function
+## Example 2: Power function
 
 Write a recursive function to find the `y`th power of a number `x`.
 
@@ -131,8 +139,6 @@ def power(x, y):
         return power(x, y/2) * power(x, y/2)
 ```
 
-The time complexity will still be the same i.e. **O(n)** because we are still computing the same number of opreations, but the recursion stack space will get reduces to **O(log2(n))**. We can reduce the time complexity to **O(log2(n))** by computing the value just once and storing the computed value in the same stack.
-
 Let's look at the recursion stack using a binary tree (as two branches can be formed).
 
 
@@ -143,14 +149,16 @@ Let's look at the recursion stack using a binary tree (as two branches can be fo
                   /       \
                6^10       6^10
               /    \      /  \
-            6^5    6^5   6^5  6^5 
-            / \     /\  /\    /\
-          6^4 6^4  6^4 ............
-          /  \ 
+            6^5    6^5   6^5  6^5
+            /       /   /     /
+          6^4      6^4 ............
+          /  \
         6^2  6^2 ............
         / \
       6^1  6^1 ............
 ```
+
+The time complexity will still be the same i.e. **O(n)** because we are still computing the same number of opreations, but the recursion stack space will get reduces to **O(log2(n))**. We can reduce the time complexity to **O(log2(n))** by computing the value just once and storing the computed value in the same stack i.e. memoization.
 
 The more optimized code with time complexity **O(log2(n))**:
 
@@ -167,6 +175,17 @@ def power_optimized(x, y):
 ```
 
 Here the value gets computed only once and it can be used again in the same stack at the time of backtracking. So time complexity is **O(log2(n))**.
+
+Also, how about using tail recursion concept? Below is an example code for it and its running time complexity is also **O(log2(n))**.
+
+```py
+def power(x, y)
+    if y == 0:
+        return 1
+    if y & 1:
+        return x * power(x, y-1)  # y is odd
+    return power(x*x, y/2)   # y is even
+```
 
 ## Example 3: Palindrome
 
@@ -199,7 +218,7 @@ Why do you think that I have written `return` before `is_palindome(s, first+1, l
 The reason for writing `return` is that we want to return the value `True` or `False` to the parent in the recursion call stack. And if we don't return or simply call the function `is_palindrome(s, first+1, last-1)` then there will be a recursion stack which will return `None` to its parent and thus the parent will return `None` to its parent and so on. In the end, you will end up receiving a `None` instead of `True` or `False` from the function.
 
 
-The recursive nature can also be observed in a way that, we can slice of the first letter and the last letter from the string and compare them if found un-equal then return false otherwise again slice off the first letter and last letter from that string and compare the letters. At some point we have to stop this process, i.e. the base case. **What strings are easy to know if they are palindromes or not?** We can say that one character or an empty string is a palindrome. So, the base case would be if the length of string gets less than 2 we return `true`.
+The recursive nature can also be observed in a way that, we can slice off the first letter and the last letter from the string and compare them if found un-equal then return false otherwise again slice off the first letter and last letter from that string and compare the letters. At some point we have to stop this process, i.e. the base case. **What strings are easy to know if they are palindromes or not?** We can say that one character or an empty string is a palindrome. So, the base case would be if the length of string gets less than 2 we return `true`.
 
 Example code:
 
@@ -221,7 +240,7 @@ The **time complexity** for the above function is `O(n)`, where `n` is the lengt
 
 Also, if you make the recursion call stack using the tree, then you will find that a skewed tree will be formed (as there is single recursion involved). So **Space complexity** is `O(n)`, note that is the space which is being formed by the programming stack.
 
-## Exercise4: Print Binary
+## Example 4: Print Binary
 
 Given an integer, print its binary equivalent.
 
@@ -263,7 +282,14 @@ if __name__ == '__main__':
 
 Time complexity of the above function is `O(log2(n))` where `n` is the number passed as the argument in the function. The complexity is `O(log2(n))` because in each function call I am reducing the problem size by half. Also, you can try making the recursion call stack using a Tree and then you yourself can observe the number of calls being made. The space complexity is again `O(log2(n))` because here the recursion stack will go `log2(n)` times deeper.
 
-## Exercise5: Reverse Lines
+Also, the recurrence relation made for above function would be:
+
+```
+T(n) = T(n/2) + C
+```
+On solving this will get evaluated to `T(n) = log2(n)`
+
+## Example 5: Reverse Lines
 
 Write a recursive function that accepts a file input stream and prints the line of that file in reverse order.
 
@@ -352,7 +378,7 @@ Time complexity = `O(n)`, where `n` is the number of lines in the file, here `n`
 
 Space complexity = `O(n)`
 
-## Exercise6: Crawl
+## Example 6: Crawl
 
 Write a function that accepts a file name as a parameter and prints information about that file.
 

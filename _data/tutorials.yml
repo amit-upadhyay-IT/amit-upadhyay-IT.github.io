@@ -16,13 +16,20 @@
   tutorials:
   - heap-introduction
 
-# - title: Recursions & Backtracking
-#   tutorials:
-#   - recursion-introduction
-#   - searching
-#   - exhaustive-search
-#   - fractals
-#   - backtracking
+- title: Recursions & Backtracking
+  tutorials:
+  - recursion-introduction
+  - searching
+  - tail-recursion
+  - exhaustive-search
+  - non-linear-recurrence-relation
+  - fractals
+  - backtracking
+
+- title: Dynamic Programming
+  tutorials:
+  - play-with-a-random-code
+  
 
 - title: LinkedList
   tutorials:
